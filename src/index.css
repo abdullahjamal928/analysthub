@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-800 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900 leading-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium transition-all focus:outline-none focus:ring-4;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-purple-600 text-white hover:bg-purple-700 focus:ring-purple-300;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-100 focus:ring-gray-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-lg;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center;
+  }
+}
+
+/* Custom animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Gradient animations */
+.gradient-bg {
+  background: linear-gradient(-45deg, #3B82F6, #8B5CF6, #EC4899, #3B82F6);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
